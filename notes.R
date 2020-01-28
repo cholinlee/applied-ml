@@ -98,9 +98,15 @@ fit_knn <-
   nearest_neighbor(mode = "regression", neighbors = 5) %>%
   set_engine("kknn") %>% 
   fit(log10(Sale_Price) ~ Longitude + Latitude, data = ames_train)
+<<<<<<< HEAD
 
 fit_knn
 
+=======
+
+fit_knn
+
+>>>>>>> 574962fca2edafccc8a822fded2a9014dce1e858
 # predict -----------------
 # skip the resampling part for now
 test_pred <- 
@@ -281,6 +287,7 @@ glmn_set <- parameters(lambda = penalty(), mixture())
 glmn_set <- 
   update(glmn_set, lambda = penalty(c(-5, -1)))
 
+
 # what are the three parameters in the knn?
 ?nearest_neighbor
 
@@ -304,4 +311,5 @@ glmn_grid %>%
   ggplot(aes(x = neighbors, y = dist_power))+
   geom_point(stat = "identity")+
   facet_wrap(~ weight_func)
+
 
